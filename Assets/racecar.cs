@@ -32,7 +32,7 @@ public class racecar : MonoBehaviour
     public void pushBreak(InputAction.CallbackContext ctx)
     {
         breakpedal = ctx.ReadValue<Vector2>();
-        breakpedal.y = breakpedal.y * 0.5f + 0.5f; 
+        breakpedal.y = breakpedal.y * -0.5f + 0.5f; 
     }
     private void Start()
     {
@@ -48,11 +48,12 @@ public class racecar : MonoBehaviour
         }
         else
         myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (700 + 200 * gear));
-        if (breakpedal.y < 1 && breakpedal.y != 0.5f)
+        if (breakpedal.y > 0 && breakpedal.y != 0.5f)
         {
             //myRB.angularVelocity *= breakpedal.y * Time.deltaTime;
             //myRB.velocity *= breakpedal.y * Time.deltaTime;
-            myRB.velocity -= myRB.velocity * Time.deltaTime * (-1 * breakpedal.y);
+            myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
         }
+
     }
 }
