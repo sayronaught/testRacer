@@ -41,13 +41,13 @@ public class racecar : MonoBehaviour
     private void Update()
     {
         gearchange -= Time.deltaTime;
-        transform.Rotate(Vector3.up, wheel.x * Time.deltaTime * 200);
+        transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
         if (gear == 0)
         {
             myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * -700);
         }
         else
-        myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (700 + 200 * gear));
+        myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
         if (breakpedal.y > 0 && breakpedal.y != 0.5f)
         {
             //myRB.angularVelocity *= breakpedal.y * Time.deltaTime;
