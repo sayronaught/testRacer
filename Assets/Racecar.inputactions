@@ -2,7 +2,7 @@
     "name": "Racecar",
     "maps": [
         {
-            "name": "Player",
+            "name": "SteeringWheel",
             "id": "f69b9caf-ee06-4d24-bbf9-2633dfc7d86f",
             "actions": [
                 {
@@ -124,6 +124,138 @@
                     "name": "up",
                     "id": "3e3155a5-338e-426a-8157-eab351fa2fc8",
                     "path": "<HID::Logitech G29 Driving Force Racing Wheel>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "break",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "id": "a67cc04c-9482-466a-b21b-314dd352af3b",
+            "actions": [
+                {
+                    "name": "steeringWheel",
+                    "type": "Value",
+                    "id": "67179bbe-8473-4941-9a4b-e7f505607002",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "gear up",
+                    "type": "Button",
+                    "id": "03031686-28a1-420e-b36b-067910ae4772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "gear down",
+                    "type": "Button",
+                    "id": "e9b86208-c2bd-4c39-92dd-0f5f44e6586e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "break",
+                    "type": "Value",
+                    "id": "e81e48e9-b53f-4dc4-92f9-fbe00af78b27",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "59ae8e31-84cd-4c5a-8205-0a35b8d2555f",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "steeringWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "down",
+                    "id": "946e9ea5-3b3b-43ec-85c6-f46034664e1f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "f2609cc0-537f-4735-b319-4d6c1055b1c7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a5bc5a13-f377-42f8-9d9e-9d44499bf0b8",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "dbe8f884-6cd1-4e5d-954a-c0b4f059ed41",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "gear up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7386dc5-79bb-41b5-be2a-615dd799d774",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "gear down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "1276fe84-43d1-44a8-b077-d212099053e7",
+                    "path": "2DVector(mode=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "break",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "65a36faf-0075-4cff-833b-24c01bfa16a9",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -573,9 +573,73 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 89acedbe-c90d-4a3a-809d-d764e1366086
     m_ActionName: buttons/-[/Logitech G29 Driving Force Racing Wheel/button23]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 809346433}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: wheelchange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 67179bbe-8473-4941-9a4b-e7f505607002
+    m_ActionName: Keyboard/steeringWheel[/Keyboard/w,/Keyboard/d,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 809346433}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: gearUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 03031686-28a1-420e-b36b-067910ae4772
+    m_ActionName: Keyboard/gear up[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 809346433}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: gearDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e9b86208-c2bd-4c39-92dd-0f5f44e6586e
+    m_ActionName: Keyboard/gear down[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 809346433}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: pushBreak
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e81e48e9-b53f-4dc4-92f9-fbe00af78b27
+    m_ActionName: Keyboard/break[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Keyboard
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 513309922}
 --- !u!54 &809346435
