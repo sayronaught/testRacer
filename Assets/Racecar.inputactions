@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "X",
-                    "type": "Button",
-                    "id": "632bfa1d-d202-42da-9049-d05ac93a76e0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "gear up",
                     "type": "Button",
                     "id": "2a98573b-aafe-40f6-b832-e731a07736e4",
@@ -98,17 +89,6 @@
                 },
                 {
                     "name": "",
-                    "id": "807caedc-1552-4730-9f65-dfaa4103652f",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "fbe93510-c22e-4e86-98e1-9426e176fc96",
                     "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button5",
                     "interactions": "",
@@ -148,6 +128,553 @@
                     "processors": "",
                     "groups": "",
                     "action": "break",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "buttons",
+            "id": "c1cf7a3b-8e48-4976-a154-3d744dd3eeba",
+            "actions": [
+                {
+                    "name": "steeringWheel",
+                    "type": "Value",
+                    "id": "ff9f8f63-d567-40ea-8b10-3415b1d609ec",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "dPad",
+                    "type": "Value",
+                    "id": "8469db89-b25a-4c4d-8b52-522d3cb23ece",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "gear up",
+                    "type": "Button",
+                    "id": "7d182ee3-0bf7-4470-b5bb-b52441cb812c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "gear down",
+                    "type": "Button",
+                    "id": "1a29d71b-38b8-448b-b2d1-8bf6b8c8039b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "break",
+                    "type": "Value",
+                    "id": "f0d767dd-2c48-43d1-b2b3-f6519c0ffbed",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "clutch",
+                    "type": "Value",
+                    "id": "550b264c-d3e5-4009-bdfb-bd99084d1963",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "triangle",
+                    "type": "Button",
+                    "id": "36f2085d-e4e1-4c3f-be29-01c5c0d6ebfc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "O",
+                    "type": "Button",
+                    "id": "2c1f4534-140d-4478-86c8-284aaf2b617b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "X",
+                    "type": "Button",
+                    "id": "c986ec71-6f63-4671-8635-f4726079b4d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "square",
+                    "type": "Button",
+                    "id": "02111e1b-9c42-4e67-bc7f-2a609bdaeb8f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "R2",
+                    "type": "Button",
+                    "id": "6226d6d1-47e5-4f68-a9ad-b7b79f0ce981",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "R3",
+                    "type": "Button",
+                    "id": "8a91c0fb-53fe-4acc-a78a-574b412f6121",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "L2",
+                    "type": "Button",
+                    "id": "985cc527-1f88-4a2d-b1fc-9d12243caaea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "L3",
+                    "type": "Button",
+                    "id": "b70877af-a6f1-4d99-87df-d272ab5b6d4a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "share",
+                    "type": "Button",
+                    "id": "f73d705d-8648-4173-a888-e5c15cfe13ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "option",
+                    "type": "Button",
+                    "id": "7b2c1f50-854b-4eba-a911-a8a6b8663edd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "menu",
+                    "type": "Button",
+                    "id": "ead72e40-bc1c-4a12-a08e-81e1a7177ea6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "enter",
+                    "type": "Button",
+                    "id": "ab846136-fc7f-4c20-9706-360662412dd0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "red Left",
+                    "type": "Button",
+                    "id": "1e861f7d-db4f-4c54-bcec-30b13e5a9db8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "red Right",
+                    "type": "Button",
+                    "id": "fa742bdd-5ca9-4d6c-8e30-855562d5851e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "+",
+                    "type": "Button",
+                    "id": "e041dcb7-c0b4-4e4b-9d61-34f6117d3561",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "-",
+                    "type": "Button",
+                    "id": "89acedbe-c90d-4a3a-809d-d764e1366086",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "f49cbcd2-c077-4287-bacf-f1c1dbd3bc69",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "steeringWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "54680bee-cf96-43d7-82bb-a0fc265b3aa3",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "33020f37-f019-417c-8fe4-586ed8861781",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "6a12c57f-2673-4971-a974-6a44d55beb96",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "steeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "055c15d9-bee5-4493-8324-9ed7e0ca4408",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "gear up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e4e02e4-aee0-40b9-99bf-38656be48d82",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "gear down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "daa36f9d-9243-4740-8148-d0511b892f8e",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "break",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "372eaa82-efde-4890-a7d3-315930d9b574",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "break",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3e4c4e20-10ba-412e-8fb3-15163cf6647d",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "triangle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "682fb8db-adb9-48cc-9dfb-e48a6728d973",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "O",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39bf047a-779c-4cb1-a168-3a933e858de5",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47c666d8-40ab-4ac7-82bd-35477296f464",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "square",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29dea5a3-4fc6-462e-8899-37b0bf7ac3c8",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "R2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e29438ed-b66e-40d6-8396-0fc3e87fb8ea",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "R3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "213659df-780e-441f-8d82-64042cb06615",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30a0777b-677d-4e7b-8826-4bdd484bc97b",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bd5d4d9-3307-4877-b53f-8f681843f5e1",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "option",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45636ca0-7ccd-418c-91c3-d353cae28804",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button24",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bdd2b0d3-0182-4e5d-82e7-03011f4766bf",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button22",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "red Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "391175a5-866e-47f3-8304-a8d85d21eb7c",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button23",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "red Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cb2361d-e0eb-4024-9b14-1a6d51c0e507",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button21",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "+",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d12576d7-969f-4e8a-915d-b1b80eeaf635",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button23",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "-",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbc74830-218a-480a-96a7-e5e060c915ab",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "share",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2e73bae-4cd2-4e84-a550-d42969680bdc",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button25",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "a856befe-59d4-4740-8464-51d0a01b47aa",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dPad",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "a4d2cc56-42b2-4241-a93b-e7da690e94c8",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/hat/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "dPad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "e72a39cf-fd5d-45e3-aec2-2ed180713bd8",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/hat/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "dPad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "a34e9c5c-28e0-4909-956d-375ca5f1b12c",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/hat/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "dPad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "d14e5da2-9871-4be4-96a6-49f6855f46a5",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/hat/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "dPad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "cdc461a6-3b85-4d4f-9f71-3c9f3352fbb3",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "clutch",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "67046fe1-f3fd-4575-a377-6f7e451e2c5a",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "clutch",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

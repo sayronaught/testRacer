@@ -17,7 +17,7 @@ public class racecar : MonoBehaviour
         wheel.y = wheel.y * -0.5f + 0.5f;
         wheel.y = Mathf.Clamp(wheel.y, 0, 1);
     }
-    public void gearuUp(InputAction.CallbackContext ctx)
+    public void gearUp(InputAction.CallbackContext ctx)
     {
         if (gearchange > 0) return;
         gear = Mathf.Clamp(gear +1 , 0 ,6);

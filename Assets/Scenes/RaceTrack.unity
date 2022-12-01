@@ -436,23 +436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 809346433}
         m_TargetAssemblyTypeName: racecar, Assembly-CSharp
-        m_MethodName: speed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 632bfa1d-d202-42da-9049-d05ac93a76e0
-    m_ActionName: Player/X[/Logitech G29 Driving Force Racing Wheel/trigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 809346433}
-        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
-        m_MethodName: gearuUp
+        m_MethodName: gearUp
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -497,6 +481,98 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e1b20d42-dee8-4b40-80b4-3b23edbdd85c
     m_ActionName: Player/break[/Logitech G29 Driving Force Racing Wheel/rz]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff9f8f63-d567-40ea-8b10-3415b1d609ec
+    m_ActionName: buttons/steeringWheel[/Logitech G29 Driving Force Racing Wheel/z,/Logitech
+      G29 Driving Force Racing Wheel/stick/left,/Logitech G29 Driving Force Racing
+      Wheel/stick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8469db89-b25a-4c4d-8b52-522d3cb23ece
+    m_ActionName: buttons/dPad[/Logitech G29 Driving Force Racing Wheel/hat/up,/Logitech
+      G29 Driving Force Racing Wheel/hat/down,/Logitech G29 Driving Force Racing
+      Wheel/hat/left,/Logitech G29 Driving Force Racing Wheel/hat/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d182ee3-0bf7-4470-b5bb-b52441cb812c
+    m_ActionName: buttons/gear up[/Logitech G29 Driving Force Racing Wheel/button5]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a29d71b-38b8-448b-b2d1-8bf6b8c8039b
+    m_ActionName: buttons/gear down[/Logitech G29 Driving Force Racing Wheel/button6]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f0d767dd-2c48-43d1-b2b3-f6519c0ffbed
+    m_ActionName: buttons/break[/Logitech G29 Driving Force Racing Wheel/rz]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 550b264c-d3e5-4009-bdfb-bd99084d1963
+    m_ActionName: buttons/clutch[/Logitech G29 Driving Force Racing Wheel/stick/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36f2085d-e4e1-4c3f-be29-01c5c0d6ebfc
+    m_ActionName: buttons/triangle[/Logitech G29 Driving Force Racing Wheel/button4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c1f4534-140d-4478-86c8-284aaf2b617b
+    m_ActionName: buttons/O[/Logitech G29 Driving Force Racing Wheel/button3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c986ec71-6f63-4671-8635-f4726079b4d5
+    m_ActionName: buttons/X[/Logitech G29 Driving Force Racing Wheel/trigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 02111e1b-9c42-4e67-bc7f-2a609bdaeb8f
+    m_ActionName: buttons/square[/Logitech G29 Driving Force Racing Wheel/button2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6226d6d1-47e5-4f68-a9ad-b7b79f0ce981
+    m_ActionName: buttons/R2[/Logitech G29 Driving Force Racing Wheel/button7]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a91c0fb-53fe-4acc-a78a-574b412f6121
+    m_ActionName: buttons/R3[/Logitech G29 Driving Force Racing Wheel/button11]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 985cc527-1f88-4a2d-b1fc-9d12243caaea
+    m_ActionName: buttons/L2[/Logitech G29 Driving Force Racing Wheel/button8]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b70877af-a6f1-4d99-87df-d272ab5b6d4a
+    m_ActionName: buttons/L3[/Logitech G29 Driving Force Racing Wheel/button12]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f73d705d-8648-4173-a888-e5c15cfe13ef
+    m_ActionName: buttons/share[/Logitech G29 Driving Force Racing Wheel/button9]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b2c1f50-854b-4eba-a911-a8a6b8663edd
+    m_ActionName: buttons/option[/Logitech G29 Driving Force Racing Wheel/button10]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ead72e40-bc1c-4a12-a08e-81e1a7177ea6
+    m_ActionName: buttons/menu[/Logitech G29 Driving Force Racing Wheel/button25]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab846136-fc7f-4c20-9706-360662412dd0
+    m_ActionName: buttons/enter[/Logitech G29 Driving Force Racing Wheel/button24]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1e861f7d-db4f-4c54-bcec-30b13e5a9db8
+    m_ActionName: buttons/red Left[/Logitech G29 Driving Force Racing Wheel/button22]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa742bdd-5ca9-4d6c-8e30-855562d5851e
+    m_ActionName: buttons/red Right[/Logitech G29 Driving Force Racing Wheel/button23]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e041dcb7-c0b4-4e4b-9d61-34f6117d3561
+    m_ActionName: buttons/+[/Logitech G29 Driving Force Racing Wheel/button21]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 89acedbe-c90d-4a3a-809d-d764e1366086
+    m_ActionName: buttons/-[/Logitech G29 Driving Force Racing Wheel/button23]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
