@@ -187,7 +187,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
+                    "name": "up",
                     "id": "946e9ea5-3b3b-43ec-85c6-f46034664e1f",
                     "path": "<Keyboard>/w",
                     "interactions": "",

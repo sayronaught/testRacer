@@ -10,44 +10,43 @@ public class racecar : MonoBehaviour
     private float gearchange = 0;
     private Rigidbody myRB = null;
     private PlayerInput myPI = null;
+    private AudioSource myAS = null;
     public Vector2 breakpedal;
     private void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myPI = GetComponent<PlayerInput>();
+        myAS = GetComponent<AudioSource>();
     }
 
     public void wheelchange(InputAction.CallbackContext ctx)
     {
-        Debug.Log("wheel");
         wheel = ctx.ReadValue<Vector2>();
-        wheel.y = wheel.y * -0.5f + 0.5f;
+        if (myPI.currentActionMap.name == "SteeringWheel") wheel.y = wheel.y * -0.5f + 0.5f;
         wheel.y = Mathf.Clamp(wheel.y, 0, 1);
     }
 
     public void gearUp(InputAction.CallbackContext ctx)
     {
-        Debug.Log("gear up");
         if (gearchange > 0) return;
         gear = Mathf.Clamp(gear +1 , 0 ,6);
         gearchange = 0.25f;
     }
     public void gearDown(InputAction.CallbackContext ctx)
     {
-        Debug.Log("gear down");
         if (gearchange > 0) return;
         gear = Mathf.Clamp(gear - 1, 0, 6);
         gearchange = 0.25f;
     }
     public void pushBreak(InputAction.CallbackContext ctx)
     {
-        Debug.Log("break");
         breakpedal = ctx.ReadValue<Vector2>();
         breakpedal.y = breakpedal.y * -0.5f + 0.5f; 
     }
 
     private void Update()
     {
+        
         gearchange -= Time.deltaTime;
         transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
         if (gear == 0)
@@ -62,6 +61,6 @@ public class racecar : MonoBehaviour
             //myRB.velocity *= breakpedal.y * Time.deltaTime;
             myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
         }
-
+        myAS.pitch = myRB.velocity.magnitude * 0.1f;
     }
 }
