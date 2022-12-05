@@ -472,7 +472,7 @@ MonoBehaviour:
   wheel: {x: 0, y: 0}
   gear: 1
   breakpedal: {x: 0, y: 0}
-  grounded: 1
+  grounded: 0
 --- !u!65 &2723565199358856634
 BoxCollider:
   m_ObjectHideFlags: 0

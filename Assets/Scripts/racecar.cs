@@ -9,7 +9,7 @@ public class racecar : MonoBehaviour
     public Vector2 wheel;
     public int gear;
     public Vector2 breakpedal;
-    public bool grounded = true;
+    public bool grounded;
 
 
     private float gearchange = 0;
@@ -75,14 +75,15 @@ public class racecar : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if( collision.collider.tag == "Terrain")
-            grounded = true;
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.tag == "Terrain")
-            grounded = false;
-    }
+   // private void OnCollisionEnter(Collision collision)
+   // {
+   //     Debug.Log(collision.gameObject );
+   //     if( collision.collider.tag == "Terrain")
+   //         grounded = true;
+   // }
+   // private void OnCollisionExit(Collision collision)
+   // {
+   //     if (collision.collider.tag == "Terrain")
+   //         grounded = false;
+   // }
 }
