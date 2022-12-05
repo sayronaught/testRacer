@@ -7,11 +7,16 @@ public class racecar : MonoBehaviour
 {
     public Vector2 wheel;
     public int gear;
+    public Vector2 breakpedal;
+    public bool grounded;
+
+
     private float gearchange = 0;
     private Rigidbody myRB = null;
     private PlayerInput myPI = null;
     private AudioSource myAS = null;
-    public Vector2 breakpedal;
+
+
     private void Start()
     {
         myRB = GetComponent<Rigidbody>();
@@ -48,19 +53,29 @@ public class racecar : MonoBehaviour
     {
         
         gearchange -= Time.deltaTime;
-        transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
-        if (gear == 0)
+        if (grounded)
         {
-            myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * -700);
+            transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
+            if (gear == 0)
+            {
+                myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * -700);
+            }
+            else
+                myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
+            myAS.pitch = myRB.velocity.magnitude * 0.1f;
+            if (breakpedal.y > 0 && breakpedal.y != 0.5f)
+                myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
         }
-        else
-        myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
-        if (breakpedal.y > 0 && breakpedal.y != 0.5f)
-        {
-            //myRB.angularVelocity *= breakpedal.y * Time.deltaTime;
-            //myRB.velocity *= breakpedal.y * Time.deltaTime;
-            myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
-        }
-        myAS.pitch = myRB.velocity.magnitude * 0.1f;
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if( collision.collider.tag == "Terrain")
+            grounded = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Terrain")
+            grounded = false;
     }
 }
