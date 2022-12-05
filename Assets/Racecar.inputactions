@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "option",
+                    "type": "Button",
+                    "id": "44e5ec31-9b89-45af-88f2-96c9917c9b99",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -130,6 +139,17 @@
                     "action": "break",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "48ece06f-a14f-4cdd-8564-53ec95c5959f",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "option",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

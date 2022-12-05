@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class racecar : MonoBehaviour
@@ -8,7 +9,7 @@ public class racecar : MonoBehaviour
     public Vector2 wheel;
     public int gear;
     public Vector2 breakpedal;
-    public bool grounded;
+    public bool grounded = true;
 
 
     private float gearchange = 0;
@@ -47,6 +48,12 @@ public class racecar : MonoBehaviour
     {
         breakpedal = ctx.ReadValue<Vector2>();
         breakpedal.y = breakpedal.y * -0.5f + 0.5f; 
+    }
+    public void changeSceen(InputAction.CallbackContext ctx)
+    {
+        int nextscene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextscene > SceneManager.sceneCount) nextscene = 0;
+        SceneManager.LoadScene(nextscene);
     }
 
     private void Update()
