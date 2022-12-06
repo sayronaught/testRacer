@@ -55,6 +55,11 @@ public class racecar : MonoBehaviour
         if (nextscene > SceneManager.sceneCount) nextscene = 0;
         SceneManager.LoadScene(nextscene);
     }
+    public void changeActionMap(InputAction.CallbackContext ctx)
+    {
+        if (myPI.currentActionMap.name == "SteeringWheel") myPI.SwitchCurrentActionMap("Keyboard");
+        else if (myPI.currentActionMap.name == "Keyboard") myPI.SwitchCurrentActionMap("SteeringWheel");
+    }
 
     private void Update()
     {

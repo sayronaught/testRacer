@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "swap action",
+                    "type": "Button",
+                    "id": "45edbe88-095b-4fe2-8e44-b12b18fd6a72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -150,6 +159,17 @@
                     "action": "option",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe3e28af-9e61-45c6-9f99-db389847d5f3",
+                    "path": "<Keyboard>/capsLock",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "swap action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -192,6 +212,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "swap map",
+                    "type": "Button",
+                    "id": "d30369c8-7256-4cb5-b534-a34f833eacd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "swap action",
+                    "type": "Button",
+                    "id": "265945c2-7e1e-4438-b3ca-f871eb691e38",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -282,6 +320,28 @@
                     "action": "break",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c365a5d3-1c69-4ddf-a4cd-73b8f65fe923",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "swap map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7615af6f-aeaa-4296-957b-98fcbfadc001",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button25",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "swap action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 2723565199358856638}
   - component: {fileID: 2723565199358856639}
   - component: {fileID: 2723565199358856632}
-  - component: {fileID: 2723565199358856633}
   - component: {fileID: 2723565199358856634}
   - component: {fileID: 2723565199358856627}
+  - component: {fileID: 2723565199358856633}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -452,27 +452,59 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 44e5ec31-9b89-45af-88f2-96c9917c9b99
     m_ActionName: SteeringWheel/option[/Logitech G29 Driving Force Racing Wheel/button10]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2723565199358856633}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: changeActionMap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 45edbe88-095b-4fe2-8e44-b12b18fd6a72
+    m_ActionName: SteeringWheel/swap action[/Keyboard/capsLock]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2723565199358856633}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: changeSceen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d30369c8-7256-4cb5-b534-a34f833eacd1
+    m_ActionName: Keyboard/swap map[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2723565199358856633}
+        m_TargetAssemblyTypeName: racecar, Assembly-CSharp
+        m_MethodName: changeActionMap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 265945c2-7e1e-4438-b3ca-f871eb691e38
+    m_ActionName: Keyboard/swap action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: SteeringWheel
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 2723565198072736615}
---- !u!114 &2723565199358856633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723565199358856635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b0d37eeee4d114f9a3d57f42a424e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheel: {x: 0, y: 0}
-  gear: 1
-  breakpedal: {x: 0, y: 0}
-  grounded: 0
 --- !u!65 &2723565199358856634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -582,3 +614,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2723565199358856633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723565199358856635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b0d37eeee4d114f9a3d57f42a424e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {x: 0, y: 0}
+  gear: 1
+  breakpedal: {x: 0, y: 0}
+  grounded: 0
