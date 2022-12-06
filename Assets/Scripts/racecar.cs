@@ -11,7 +11,7 @@ public class racecar : MonoBehaviour
     public Vector2 breakpedal;
     public bool grounded;
 
-
+    public float SSS;
     private float gearchange = 0;
     private Rigidbody myRB = null;
     private PlayerInput myPI = null;
@@ -34,15 +34,21 @@ public class racecar : MonoBehaviour
 
     public void gearUp(InputAction.CallbackContext ctx)
     {
-        if (gearchange > 0) return;
-        gear = Mathf.Clamp(gear +1 , 0 ,6);
-        gearchange = 0.25f;
+        if (ctx.started)
+        {
+            if (gearchange > 0) return;
+            gear = Mathf.Clamp(gear + 1, 0, 6);
+            gearchange = 0.25f;
+        }
     }
     public void gearDown(InputAction.CallbackContext ctx)
     {
-        if (gearchange > 0) return;
-        gear = Mathf.Clamp(gear - 1, 0, 6);
-        gearchange = 0.25f;
+        if (ctx.started)
+        {
+            if (gearchange > 0) return;
+            gear = Mathf.Clamp(gear - 1, 0, 6);
+            gearchange = 0.25f;
+        }
     }
     public void pushBreak(InputAction.CallbackContext ctx)
     {
@@ -51,9 +57,12 @@ public class racecar : MonoBehaviour
     }
     public void changeSceen(InputAction.CallbackContext ctx)
     {
-        int nextscene = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextscene > SceneManager.sceneCount) nextscene = 0;
-        SceneManager.LoadScene(nextscene);
+        if (ctx.started)
+        {
+            int nextscene = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextscene > SceneManager.sceneCount) nextscene = 0;
+            SceneManager.LoadScene(nextscene);
+        }
     }
     public void changeActionMap(InputAction.CallbackContext ctx)
     {
@@ -78,21 +87,18 @@ public class racecar : MonoBehaviour
             }
             else
                 myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
-            myAS.pitch = myRB.velocity.magnitude * 0.05f;
+            myAS.pitch = wheel.y * SSS + 0.5f;
             if (breakpedal.y > 0 && breakpedal.y != 0.5f)
-                myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
+                myRB.velocity -= myRB.velocity * Time.deltaTime * breakpedal.y;
         }
 
     }
-   // private void OnCollisionEnter(Collision collision)
-   // {
-   //     Debug.Log(collision.gameObject );
-   //     if( collision.collider.tag == "Terrain")
-   //         grounded = true;
-   // }
-   // private void OnCollisionExit(Collision collision)
-   // {
-   //     if (collision.collider.tag == "Terrain")
-   //         grounded = false;
-   // }
+    private void OnCollisionStay(Collision collision)
+    {
+        grounded = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
+    }
 }
