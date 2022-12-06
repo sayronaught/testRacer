@@ -57,8 +57,12 @@ public class racecar : MonoBehaviour
     }
     public void changeActionMap(InputAction.CallbackContext ctx)
     {
-        if (myPI.currentActionMap.name == "SteeringWheel") myPI.SwitchCurrentActionMap("Keyboard");
-        else if (myPI.currentActionMap.name == "Keyboard") myPI.SwitchCurrentActionMap("SteeringWheel");
+        if (ctx.started)
+        {
+            if (myPI.currentActionMap.name == "SteeringWheel") myPI.SwitchCurrentActionMap("Keyboard");
+            else if (myPI.currentActionMap.name == "Keyboard") myPI.SwitchCurrentActionMap("SteeringWheel");
+            else return;
+        }
     }
 
     private void Update()
@@ -74,7 +78,7 @@ public class racecar : MonoBehaviour
             }
             else
                 myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
-            myAS.pitch = myRB.velocity.magnitude * 0.1f;
+            myAS.pitch = myRB.velocity.magnitude * 0.05f;
             if (breakpedal.y > 0 && breakpedal.y != 0.5f)
                 myRB.velocity -= myRB.velocity * Time.deltaTime *  breakpedal.y;
         }
