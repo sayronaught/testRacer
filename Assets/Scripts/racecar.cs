@@ -91,6 +91,10 @@ public class racecar : MonoBehaviour
             if (breakpedal.y > 0 && breakpedal.y != 0.5f)
                 myRB.velocity -= myRB.velocity * Time.deltaTime * breakpedal.y;
         }
+       // if (transform.up.y < transform.position.y)
+       // {
+       //     transform.LookAt(transform.forward);
+       // }
 
     }
     private void OnCollisionStay(Collision collision)
