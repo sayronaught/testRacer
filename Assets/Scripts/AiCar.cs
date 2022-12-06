@@ -10,6 +10,7 @@ public class AiCar : MonoBehaviour
     private Rigidbody myRB;
     public int currentWaypoint = 0;
     public float StandardSpeed = 1000000;
+    public float TurnSpeed = 350000;
 
     private float holderDistanceTarget;
     private float holderDistanceLeft;
@@ -22,23 +23,23 @@ public class AiCar : MonoBehaviour
     {
         holderDistanceTarget = Vector3.Distance(transform.position, thisTrack.Waypoints[currentWaypoint].transform.position);
         holderDistanceCenter = Vector3.Distance(
-            transform.position + ( transform.forward * holderDistanceTarget ),
+            transform.position + ( transform.forward * holderDistanceTarget * 1.1f ),
             thisTrack.Waypoints[currentWaypoint].transform.position);
         holderDistanceLeft = Vector3.Distance(
-            transform.position + ( transform.forward * holderDistanceTarget ) + 
-            ( transform.right * holderDistanceTarget * -0.25f ),
+            transform.position + ( transform.forward * holderDistanceTarget * 1f ) + 
+            ( transform.right * holderDistanceTarget * -0.5f ),
             thisTrack.Waypoints[currentWaypoint].transform.position);
         holderDistanceRight = Vector3.Distance(
-            transform.position + (transform.forward * holderDistanceTarget ) +
-            (transform.right * holderDistanceTarget * 0.25f),
+            transform.position + (transform.forward * holderDistanceTarget * 1f) +
+            (transform.right * holderDistanceTarget * 0.5f),
             thisTrack.Waypoints[currentWaypoint].transform.position);
         if ( holderDistanceLeft < holderDistanceCenter )
         { // target is to the left, we turn left
-            myRB.AddRelativeTorque(transform.up * Time.deltaTime * -350000);
+            myRB.AddRelativeTorque(transform.up * Time.deltaTime * -TurnSpeed);
         }
         if (holderDistanceRight < holderDistanceCenter)
         { // target is to the left, we turn left
-            myRB.AddRelativeTorque(transform.up * Time.deltaTime * 350000);
+            myRB.AddRelativeTorque(transform.up * Time.deltaTime * TurnSpeed);
         }
     }
 
