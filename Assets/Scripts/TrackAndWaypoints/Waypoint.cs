@@ -15,6 +15,7 @@ public class Waypoint : MonoBehaviour
                 findAI.currentWaypoint++;
             if (findAI.currentWaypoint >= findAI.thisTrack.Waypoints.Length)
                 findAI.currentWaypoint = 0;
+            findAI.myWaypoint = findAI.thisTrack.Waypoints[findAI.currentWaypoint].transform;
         }
     }
 

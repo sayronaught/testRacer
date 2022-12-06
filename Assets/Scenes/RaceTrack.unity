@@ -168,7 +168,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 26.006836, y: 5, z: 30.55}
-  m_Center: {x: 5.6109314, y: 0, z: 11.719999}
+  m_Center: {x: 5.6109314, y: 0, z: 5.4}
 --- !u!114 &330910999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +891,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 26.006836, y: 5, z: 30.55}
-  m_Center: {x: 5.6109314, y: 0, z: 11.719999}
+  m_Center: {x: 5.6109314, y: 0, z: 2.57}
 --- !u!114 &1445614941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,6 +1800,7 @@ MonoBehaviour:
   thisTrack: {fileID: 0}
   currentWaypoint: 0
   StandardSpeed: 1000000
+  myWaypoint: {fileID: 0}
 --- !u!54 &223657417524020930
 Rigidbody:
   m_ObjectHideFlags: 0
