@@ -12,10 +12,12 @@ public class AiCar : MonoBehaviour
     public float StandardSpeed = 1000000;
     public float TurnSpeed = 350000;
 
-    public float holderDistanceTarget;
+    private float holderDistanceTarget;
     private float holderDistanceLeft;
     private float holderDistanceCenter;
     private float holderDistanceRight;
+    public float holderDirection;
+    private Vector3 targetDirection;
 
     public Vector3 distance;
 
@@ -23,7 +25,7 @@ public class AiCar : MonoBehaviour
     private float reverseCooldown = 2f;
     private bool reverse = false;
 
-    private bool grounded = true;
+    public bool grounded = true;
 
     public Transform myWaypoint;
 
@@ -31,26 +33,27 @@ public class AiCar : MonoBehaviour
     private void doIturnOrNot()
     {
         holderDistanceTarget = Vector3.Distance(transform.position, thisTrack.Waypoints[currentWaypoint].transform.position);
-        holderDistanceCenter = Vector3.Distance(
-            transform.position + ( transform.forward * holderDistanceTarget * 1.1f ),
-            thisTrack.Waypoints[currentWaypoint].transform.position);
+        targetDirection = thisTrack.Waypoints[currentWaypoint].transform.position - transform.position;
         holderDistanceLeft = Vector3.Distance(
-            transform.position + ( transform.forward * holderDistanceTarget * 1f ) + 
-            ( transform.right * holderDistanceTarget * -0.2f ),
+            transform.position + -transform.right *3,
             thisTrack.Waypoints[currentWaypoint].transform.position);
         holderDistanceRight = Vector3.Distance(
-            transform.position + (transform.forward * holderDistanceTarget * 1f) +
-            (transform.right * holderDistanceTarget * 0.2f),
+            transform.position + transform.right *3,
             thisTrack.Waypoints[currentWaypoint].transform.position);
+        holderDirection = Vector3.Angle(transform.position, targetDirection);
+       
+        distance = new Vector3 (holderDistanceLeft, holderDistanceTarget , holderDistanceRight);
 
-        distance = new Vector3 (holderDistanceLeft, holderDistanceCenter , holderDistanceRight);
-        if ( holderDistanceLeft < holderDistanceCenter )
-        { // target is to the left, we turn left
-            myRB.AddRelativeTorque(transform.up * Time.deltaTime * -TurnSpeed);
-        }
-        if (holderDistanceRight < holderDistanceCenter)
-        { // target is to the left, we turn left
-            myRB.AddRelativeTorque(transform.up * Time.deltaTime * TurnSpeed);
+        if (grounded)
+        {
+            if (holderDistanceLeft < holderDistanceTarget && holderDirection > 10f)
+            { // target is to the left, we turn left
+                myRB.AddRelativeTorque(transform.up * Time.deltaTime * -TurnSpeed);
+            }
+            if (holderDistanceRight < holderDistanceTarget && holderDirection > 10f)
+            { // target is to the left, we turn left
+                myRB.AddRelativeTorque(transform.up * Time.deltaTime * TurnSpeed);
+            }
         }
     }
 
@@ -66,7 +69,7 @@ public class AiCar : MonoBehaviour
         }
         if (reverse && grounded)
         {
-            reverseCooldown = 0.2f;
+            reverseCooldown = 0.5f;
             myRB.AddForce(-transform.forward * Time.deltaTime * StandardSpeed);
         }
         if (reverseTimer < 0)
@@ -77,9 +80,9 @@ public class AiCar : MonoBehaviour
 
     private void flip()
     {
-        if (transform.up.y < 0.2f)
+        if (transform.up.y < 0.2f && grounded)
         {
-            transform.localRotation = Quaternion.Euler(0, transform.rotation.y + 90, transform.rotation.z);
+            transform.localRotation = Quaternion.Euler(0, transform.rotation.y - 90, transform.rotation.z);
         }
     }
 
@@ -97,6 +100,7 @@ public class AiCar : MonoBehaviour
         doIReverse();
         if (!reverse && grounded ) myRB.AddForce(transform.forward * Time.deltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate);
         doIturnOrNot();
+        flip();
         //transform.LookAt(thisTrack.Waypoints[currentWaypoint].transform.position);
 
     }

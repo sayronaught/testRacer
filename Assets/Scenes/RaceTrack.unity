@@ -654,7 +654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &675387592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -700,8 +700,9 @@ MonoBehaviour:
   currentWaypoint: 0
   StandardSpeed: 800000
   TurnSpeed: 320000
-  holderDistanceTarget: 0
+  holderDirection: 0
   distance: {x: 0, y: 0, z: 0}
+  grounded: 1
   myWaypoint: {fileID: 0}
 --- !u!4 &675387595
 Transform:
@@ -1952,7 +1953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1388604527
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1998,8 +1999,9 @@ MonoBehaviour:
   currentWaypoint: 0
   StandardSpeed: 1250000
   TurnSpeed: 390000
-  holderDistanceTarget: 0
+  holderDirection: 0
   distance: {x: 0, y: 0, z: 0}
+  grounded: 1
   myWaypoint: {fileID: 0}
 --- !u!4 &1388604530
 Transform:
@@ -2952,8 +2954,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.37, y: 5, z: 30.55}
-  m_Center: {x: 0, y: 0, z: 11.72}
+  m_Size: {x: 22.37, y: 10.216342, z: 30.55}
+  m_Center: {x: 0, y: 2.6081715, z: 11.719999}
 --- !u!1 &1966435072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,7 +3262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723565199358856635, guid: 99e76bb0ef885314c9474c369bebb10f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2723565199358856636, guid: 99e76bb0ef885314c9474c369bebb10f, type: 3}
       propertyPath: m_RootOrder
