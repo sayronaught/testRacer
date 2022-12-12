@@ -11,7 +11,6 @@ public class racecar : MonoBehaviour
     public Vector2 breakpedal;
     public bool grounded;
 
-    public float SSS;
     private float gearchange = 0;
     private Rigidbody myRB = null;
     private PlayerInput myPI = null;
@@ -53,7 +52,7 @@ public class racecar : MonoBehaviour
     public void pushBreak(InputAction.CallbackContext ctx)
     {
         breakpedal = ctx.ReadValue<Vector2>();
-        breakpedal.y = breakpedal.y * -0.5f + 0.5f; 
+        if (myPI.currentActionMap.name == "SteeringWheel") breakpedal.y = breakpedal.y * -0.5f + 0.5f; 
     }
     public void changeSceen(InputAction.CallbackContext ctx)
     {
@@ -80,21 +79,21 @@ public class racecar : MonoBehaviour
         gearchange -= Time.deltaTime;
         if (grounded)
         {
-            transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
+            transform.Rotate(transform.up, wheel.x * Time.deltaTime * 50 * wheel.y);
             if (gear == 0)
             {
                 myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * -700);
             }
             else
                 myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * (900 + 300 * gear));
-            myAS.pitch = wheel.y * SSS + 0.5f;
+            myAS.pitch = wheel.y * 0.8f + 0.5f;
             if (breakpedal.y > 0 && breakpedal.y != 0.5f)
                 myRB.velocity -= myRB.velocity * Time.deltaTime * breakpedal.y;
         }
-       // if (transform.up.y < transform.position.y)
-       // {
-       //     transform.LookAt(transform.forward);
-       // }
+        if (transform.up.y < 0.2f)
+        {
+            transform.localRotation = Quaternion.Euler(0 ,transform.rotation.y +90, transform.rotation.z);
+        }
 
     }
     private void OnCollisionStay(Collision collision)
