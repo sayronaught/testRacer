@@ -84,6 +84,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166601049544047462}
   m_Enabled: 1
+--- !u!1 &1356665808487039494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3626705891059668310}
+  m_Layer: 0
+  m_Name: center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3626705891059668310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356665808487039494}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1380931926029838740}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378120198425330176
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +543,7 @@ GameObject:
   - component: {fileID: 1380931926029838743}
   - component: {fileID: 1380931926029838742}
   m_Layer: 0
-  m_Name: EnemyCar01
+  m_Name: EnemyCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,6 +570,7 @@ Transform:
   - {fileID: 1381253213611967554}
   - {fileID: 1383823004731591264}
   - {fileID: 1166601049544047463}
+  - {fileID: 3626705891059668310}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -558,7 +590,13 @@ MonoBehaviour:
   currentWaypoint: 0
   StandardSpeed: 1000000
   TurnSpeed: 350000
+  grounded: 1
   myWaypoint: {fileID: 0}
+  centerEye: {fileID: 3626705891059668310}
+  minEyeDistance: 0
+  turnEye: 0
+  eyeDistance: []
+  targetDistance: 0
 --- !u!65 &1380931926029838743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -567,7 +605,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378591100755685290}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 2}
