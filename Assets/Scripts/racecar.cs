@@ -79,7 +79,7 @@ public class racecar : MonoBehaviour
         gearchange -= Time.deltaTime;
         if (grounded)
         {
-            transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200 * wheel.y);
+            transform.Rotate(transform.up, wheel.x * Time.deltaTime * 200);
             if (gear == 0)
             {
                 myRB.AddForce(transform.forward * wheel.y * Time.deltaTime * -700);

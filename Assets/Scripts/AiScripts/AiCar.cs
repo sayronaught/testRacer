@@ -32,13 +32,19 @@ public class AiCar : MonoBehaviour
         centerLeftEye.gameObject.name = "centerLeft";
         backEye = Instantiate(centerEye, transform.position, transform.rotation, transform);
         backEye.gameObject.name = "back";
+        cCRightEye = Instantiate(centerEye, transform.position, transform.rotation, transform);
+        cCRightEye.gameObject.name = "cCRight";
+        cCLeftEye = Instantiate(centerEye, transform.position, transform.rotation, transform);
+        cCLeftEye.gameObject.name = "cCLeft";
 
         eyeDistance.Add(centerEyeDistance);
         eyeDistance.Add(leftEyeDistance);
         eyeDistance.Add(rightEyeDistance);
         eyeDistance.Add(centerRightEyeDistance);
-        eyeDistance.Add(CenterLeftEyeDistance);
+        eyeDistance.Add(centerLeftEyeDistance);
         eyeDistance.Add(backEyeDistance);
+        eyeDistance.Add(cCRightEyeDistance);
+        eyeDistance.Add(cCLeftEyeDistance);
     }
 
     public Transform centerEye;
@@ -47,13 +53,17 @@ public class AiCar : MonoBehaviour
     private Transform centerLeftEye;
     private Transform centerRightEye;
     private Transform backEye;
+    private Transform cCLeftEye;
+    private Transform cCRightEye;
 
     private float centerEyeDistance;
     private float leftEyeDistance;
     private float rightEyeDistance;
-    private float CenterLeftEyeDistance;
+    private float centerLeftEyeDistance;
     private float centerRightEyeDistance;
     private float backEyeDistance;
+    private float cCLeftEyeDistance;
+    private float cCRightEyeDistance;
     private float minEyeDistance;
     private int turnEye;
     private List<float> eyeDistance = new List<float>();
@@ -62,11 +72,39 @@ public class AiCar : MonoBehaviour
 
     private float targetDistance;
 
+    public float slowdown = 1;
+
+    private Vector3 rayOffset = new Vector3(0,0.5f,0);
+
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
         thisTrack = GameObject.FindObjectOfType<Track>();
         doIturnSetup();
+    }
+    public RaycastHit forwardRay;
+    public RaycastHit backRay;
+    public RaycastHit leftRay;
+    public RaycastHit rightRay;
+    void awarenessUpdate()
+    {
+
+        if (Physics.Raycast(transform.position + rayOffset, transform.forward, out forwardRay, 5))
+        {
+            Debug.DrawRay(transform.position + rayOffset, transform.forward * forwardRay.distance, Color.yellow);
+            slowdown = forwardRay.distance * 0.1f;
+        }
+        else slowdown = 1f;
+        if (Physics.Raycast(transform.position + rayOffset, transform.right, out rightRay, 2))
+        {
+            Debug.DrawRay(transform.position + rayOffset, transform.right * rightRay.distance, Color.yellow);
+            myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * -TurnSpeed * 0.8f);
+        }
+        if (Physics.Raycast(transform.position + rayOffset, -transform.right, out leftRay, 2))
+        {
+            Debug.DrawRay(transform.position + rayOffset, -transform.right * leftRay.distance, Color.yellow);
+            myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * TurnSpeed * 0.8f);
+        }
     }
 
     void doIturnUpdate()
@@ -78,18 +116,23 @@ public class AiCar : MonoBehaviour
         leftEye.transform.localPosition =  new Vector3(Mathf.Sin(-15 / 57.5f) * targetDistance, 0, Mathf.Cos(-15 / 57.5f) * targetDistance);
         rightEye.transform.localPosition = new Vector3(Mathf.Sin(15 / 57.5f) * targetDistance, 0, Mathf.Cos(15 / 57.5f) * targetDistance);
         backEye.transform.position = transform.position + -transform.forward * targetDistance;
+        cCLeftEye.transform.localPosition = new Vector3(Mathf.Sin(-1 / 57.5f) * targetDistance, 0, Mathf.Cos(-1 / 57.5f) * targetDistance);
+        cCRightEye.transform.localPosition = new Vector3(Mathf.Sin(1 / 57.5f) * targetDistance, 0, Mathf.Cos(1 / 57.5f) * targetDistance);
         doIturnOrNot();
     }
 
     private void doIturnOrNot()
     {
-        randomVector = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), Random.Range(-2, 2));
+        randomVector = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f));
         eyeDistance[0] = Vector3.Distance(centerEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
         eyeDistance[1] = Vector3.Distance(leftEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
         eyeDistance[2] = Vector3.Distance(rightEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
         eyeDistance[3] = Vector3.Distance(centerRightEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
         eyeDistance[4] = Vector3.Distance(centerLeftEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
         eyeDistance[5] = Vector3.Distance(backEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
+        eyeDistance[6] = Vector3.Distance(cCLeftEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
+        eyeDistance[7] = Vector3.Distance(cCRightEye.transform.position, thisTrack.Waypoints[currentWaypoint].transform.position + randomVector);
+
         minEyeDistance = 10000;
         int count =-1;
         foreach(float eye in eyeDistance)
@@ -108,31 +151,35 @@ public class AiCar : MonoBehaviour
                 case 0: // center
                     break;
                 case 1: // left
-                    myRB.AddRelativeTorque(transform.up * Time.deltaTime * -TurnSpeed);
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * -TurnSpeed);
                     break;
                 case 2: // right
-                    myRB.AddRelativeTorque(transform.up * Time.deltaTime * TurnSpeed);
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * TurnSpeed);
                     break;
                 case 3: // centerRight
-                    myRB.AddRelativeTorque(transform.up * Time.deltaTime * TurnSpeed * 0.7f);
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * TurnSpeed * 0.7f);
                     break;
                 case 4: // centerLeft
-                    myRB.AddRelativeTorque(transform.up * Time.deltaTime * -TurnSpeed * 0.7f);
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * -TurnSpeed * 0.7f);
                     break;
                 case 5: // back
+                    break;
+                case 6: // center center left
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * -TurnSpeed * 0.3f);
+                    break;
+                case 7: // center center right
+                    myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * TurnSpeed * 0.3f);
                     break;
                 default: // fuck
                     break;
             }
         }
-
     }
 
     public void doIReverse()
     {
-        reverseTimer -= Time.deltaTime;
-        reverseCooldown -= Time.deltaTime;
-        //Debug.Log(gameObject.name + " " + myRB.velocity.magnitude + " " + reverseCooldown);
+        reverseTimer -= Time.fixedDeltaTime;
+        reverseCooldown -= Time.fixedDeltaTime;
         if (myRB.velocity.magnitude <= 0.3f && reverseCooldown < 0 )
         {
             reverseTimer = 2;
@@ -140,8 +187,8 @@ public class AiCar : MonoBehaviour
         }
         if (reverse && grounded)
         {
-            reverseCooldown = 0.5f;
-            myRB.AddForce(-transform.forward * Time.deltaTime * StandardSpeed);
+            reverseCooldown = 1f;
+            myRB.AddForce(-transform.forward * Time.fixedDeltaTime * StandardSpeed);
         }
         if (reverseTimer < 0)
         {
@@ -157,12 +204,13 @@ public class AiCar : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        awarenessUpdate();
         if (thisTrack == null) return;
 
         doIReverse();
-        if (!reverse && grounded ) myRB.AddForce(transform.forward * Time.deltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate);
+        if (!reverse && grounded ) myRB.AddForce(transform.forward * Time.fixedDeltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate * slowdown);
         doIturnUpdate();
         flip();
 
