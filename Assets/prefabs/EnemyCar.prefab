@@ -539,9 +539,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380931926029838740}
-  - component: {fileID: 1380931926029838741}
+  - component: {fileID: 1135256276690576195}
   - component: {fileID: 1380931926029838743}
   - component: {fileID: 1380931926029838742}
+  - component: {fileID: 2548132616793017229}
   m_Layer: 0
   m_Name: EnemyCar
   m_TagString: Untagged
@@ -574,7 +575,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1380931926029838741
+--- !u!114 &1135256276690576195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -583,20 +584,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378591100755685290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f882ee2dec0a548be5eb963558e4f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 68a817f9c918304448ced414cec01a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thisTrack: {fileID: 0}
   currentWaypoint: 0
-  StandardSpeed: 1000000
-  TurnSpeed: 350000
-  grounded: 1
   myWaypoint: {fileID: 0}
-  centerEye: {fileID: 3626705891059668310}
-  minEyeDistance: 0
-  turnEye: 0
-  eyeDistance: []
-  targetDistance: 0
 --- !u!65 &1380931926029838743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -626,6 +619,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &2548132616793017229
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378591100755685290}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 40
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 40
+  m_StoppingDistance: 20
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1379010873930295244
 GameObject:
   m_ObjectHideFlags: 0

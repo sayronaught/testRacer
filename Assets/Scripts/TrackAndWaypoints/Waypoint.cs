@@ -17,6 +17,15 @@ public class Waypoint : MonoBehaviour
                 findAI.currentWaypoint = 0;
             findAI.myWaypoint = findAI.thisTrack.Waypoints[findAI.currentWaypoint].transform;
         }
+        navAiCar findNavAI = other.GetComponent<navAiCar>();
+        if (findNavAI != null)
+        { // this is an AI car
+            if (findNavAI.thisTrack.Waypoints[findNavAI.currentWaypoint] == this)
+                findNavAI.currentWaypoint++;
+            if (findNavAI.currentWaypoint >= findNavAI.thisTrack.Waypoints.Length)
+                findNavAI.currentWaypoint = 0;
+            findNavAI.myWaypoint = findNavAI.thisTrack.Waypoints[findNavAI.currentWaypoint].transform;
+        }
     }
 
     // Start is called before the first frame update
