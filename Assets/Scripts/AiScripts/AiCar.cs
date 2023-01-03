@@ -82,6 +82,19 @@ public class AiCar : MonoBehaviour
         thisTrack = GameObject.FindObjectOfType<Track>();
         doIturnSetup();
     }
+    public RaycastHit stuckRay;
+    void amIstuck()
+    {
+        if (Physics.Raycast(transform.position + rayOffset, thisTrack.Waypoints[currentWaypoint].transform.position - transform.position, out stuckRay, targetDistance ))
+        {
+            currentWaypoint--;
+        }
+        if (currentWaypoint < 0f)
+        {
+            currentWaypoint = thisTrack.Waypoints.Length - 1;
+        }
+        Debug.DrawRay(transform.position + rayOffset, thisTrack.Waypoints[currentWaypoint].transform.position - transform.position, Color.red);
+    }
     public RaycastHit forwardRay;
     public RaycastHit backRay;
     public RaycastHit leftRay;
@@ -173,6 +186,7 @@ public class AiCar : MonoBehaviour
                 default: // fuck
                     break;
             }
+            //myRB.AddRelativeTorque(transform.up * Time.fixedDeltaTime * TurnSpeed * Mathf.Sin(1 * Time.fixedTime) * 0.1f);
         }
     }
 
@@ -206,15 +220,18 @@ public class AiCar : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         awarenessUpdate();
         if (thisTrack == null) return;
 
         doIReverse();
         if (!reverse && grounded ) myRB.AddForce(transform.forward * Time.fixedDeltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate * slowdown);
         doIturnUpdate();
+        amIstuck();
         flip();
 
     }
+
     private void OnCollisionStay(Collision collision)
     {
         grounded = true;

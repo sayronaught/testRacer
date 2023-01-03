@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380931926029838740}
-  - component: {fileID: 1135256276690576195}
+  - component: {fileID: 475827101009446934}
   - component: {fileID: 1380931926029838743}
   - component: {fileID: 1380931926029838742}
   - component: {fileID: 2548132616793017229}
@@ -575,7 +575,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1135256276690576195
+--- !u!114 &475827101009446934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -584,12 +584,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378591100755685290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a817f9c918304448ced414cec01a52, type: 3}
+  m_Script: {fileID: 11500000, guid: 84f882ee2dec0a548be5eb963558e4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thisTrack: {fileID: 0}
   currentWaypoint: 0
+  StandardSpeed: 1000000
+  TurnSpeed: 350000
+  grounded: 1
   myWaypoint: {fileID: 0}
+  centerEye: {fileID: 3626705891059668310}
+  slowdown: 1
 --- !u!65 &1380931926029838743
 BoxCollider:
   m_ObjectHideFlags: 0
