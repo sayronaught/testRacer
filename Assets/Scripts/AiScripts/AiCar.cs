@@ -83,6 +83,7 @@ public class AiCar : MonoBehaviour
         doIturnSetup();
     }
     public RaycastHit stuckRay;
+    public RaycastHit reverseRay;
     void amIstuck()
     {
         if (Physics.Raycast(transform.position + rayOffset, thisTrack.Waypoints[currentWaypoint].transform.position - transform.position, out stuckRay, targetDistance ))
@@ -194,11 +195,12 @@ public class AiCar : MonoBehaviour
     {
         reverseTimer -= Time.fixedDeltaTime;
         reverseCooldown -= Time.fixedDeltaTime;
-        if (myRB.velocity.magnitude <= 0.3f && reverseCooldown < 0 )
+        if (Physics.Raycast(transform.position + rayOffset, transform.forward, out reverseRay, 3))
         {
             reverseTimer = 2;
             reverse = true;
         }
+        Debug.DrawRay(transform.position + rayOffset, transform.forward * reverseRay.distance, Color.blue);
         if (reverse && grounded)
         {
             reverseCooldown = 1f;
@@ -225,7 +227,7 @@ public class AiCar : MonoBehaviour
         if (thisTrack == null) return;
 
         doIReverse();
-        if (!reverse && grounded ) myRB.AddForce(transform.forward * Time.fixedDeltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate * slowdown);
+        if (!reverse && grounded) myRB.AddForce(transform.forward * Time.fixedDeltaTime * StandardSpeed * thisTrack.Waypoints[currentWaypoint].AiAccelerate * slowdown);
         doIturnUpdate();
         amIstuck();
         flip();

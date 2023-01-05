@@ -6,7 +6,7 @@ public class Waypoint : MonoBehaviour
 {
     public float AiAccelerate = 1f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         AiCar findAI = other.GetComponent<AiCar>();
         if ( findAI != null )
